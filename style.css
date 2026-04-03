@@ -117,7 +117,6 @@ body {
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
     transition: background 0.5s var(--ease), color 0.4s var(--ease);
 }
 
@@ -1031,3 +1030,213 @@ section {
         padding-top: 110px;
     }
 }
+
+/* Custom Additions for Exp 7 */
+.responsive-exp7-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* ================= OVERHAUL: ARCH ASTRONOMER THEME ================= */
+/* Light Mode Ext. (Parchment & Brass) */
+:root {
+    --bg-primary: #f8f6f0;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f0ead8;
+    --surface: rgba(255, 255, 255, 0.85);
+    --surface-hover: rgba(255, 248, 235, 0.95);
+    --surface-border: rgba(184, 153, 56, 0.25);
+    --surface-shadow: 0 8px 32px rgba(138, 115, 42, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    
+    --text-primary: #1e253c; /* Midnight Blue Ink */
+    --text-secondary: #4a5578;
+    --text-tertiary: #7181a1;
+    --text-inverse: #fdfdfc;
+
+    --accent: #a58117; /* Antiqued Brass */
+    --accent-light: rgba(165, 129, 23, 0.15);
+    --accent-hover: #7b5f0f;
+
+    --blob-1: rgba(165, 129, 23, 0.12); 
+    --blob-2: rgba(30, 37, 60, 0.08);  
+    --blob-3: rgba(138, 150, 180, 0.15); 
+
+    --pill-bg: rgba(165, 129, 23, 0.1);
+    --pill-border: rgba(165, 129, 23, 0.3);
+    --pill-text: #1e253c;
+    --tag-bg: rgba(30, 37, 60, 0.1);
+    --tag-text: #1e253c;
+
+    /* Theme Vars */
+    --bg-gradient: radial-gradient(circle at 50% 0%, #fdfcf9 0%, #ede6d5 60%);
+    --body-bg: #ede6d5;
+    --card-gradient: linear-gradient(180deg, var(--surface) 0%, rgba(220, 205, 170, 0.3) 100%);
+    --title-gradient: linear-gradient(135deg, #1e253c, #a58117, #856510);
+    --section-title-gradient: linear-gradient(90deg, #856510, #1e253c);
+    --btn-gradient: linear-gradient(135deg, #1e253c, #2b3658);
+    --btn-text: #ffffff;
+    --hero-name-shadow: 0 2px 20px rgba(165, 129, 23, 0.15);
+    --logo-shadow: 0 0 20px rgba(165, 129, 23, 0.2);
+    --card-hover-border: rgba(165, 129, 23, 0.5);
+    --card-hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.06), 0 0 20px rgba(165, 129, 23, 0.15);
+    --greeting-color: #a58117;
+}
+
+/* Dark Mode Ext. (Cosmos & Gold) */
+[data-theme="dark"] {
+    --bg-primary: #040914;
+    --bg-secondary: #0a0f25;
+    --bg-tertiary: #101633;
+    --surface: rgba(18, 24, 46, 0.75);
+    --surface-hover: rgba(28, 38, 70, 0.85);
+    --surface-border: rgba(212, 175, 55, 0.15); 
+    --surface-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(255, 230, 130, 0.12);
+    
+    --text-primary: #f0f4ff;
+    --text-secondary: #abc4ff;
+    --text-tertiary: #5e77b6;
+    --text-inverse: #040914;
+
+    --accent: #d4af37; 
+    --accent-light: rgba(212, 175, 55, 0.15);
+    --accent-hover: #f0d06a;
+
+    --blob-1: rgba(99, 102, 241, 0.12); 
+    --blob-2: rgba(212, 175, 55, 0.1);  
+    --blob-3: rgba(192, 132, 252, 0.1); 
+
+    --pill-bg: rgba(212, 175, 55, 0.08);
+    --pill-border: rgba(212, 175, 55, 0.2);
+    --pill-text: #e0e7ff;
+    --tag-bg: rgba(99, 102, 241, 0.12);
+    --tag-text: #a5b4fc;
+
+    /* Theme Vars */
+    --bg-gradient: radial-gradient(circle at 50% 0%, #1a163a 0%, #040914 60%);
+    --body-bg: #040914;
+    --card-gradient: linear-gradient(180deg, var(--surface) 0%, rgba(10, 15, 37, 0.6) 100%);
+    --title-gradient: linear-gradient(135deg, #ffffff, #d4af37, #ffd700);
+    --section-title-gradient: linear-gradient(90deg, #d4af37, #fdf4d4);
+    --btn-gradient: linear-gradient(135deg, #d4af37, #9b7d1d);
+    --btn-text: #000000;
+    --hero-name-shadow: 0 2px 40px rgba(212, 175, 55, 0.3);
+    --logo-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    --card-hover-border: rgba(212, 175, 55, 0.4);
+    --card-hover-shadow: 0 12px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.15);
+    --greeting-color: #ffd700;
+}
+
+body {
+    background-image: var(--bg-gradient);
+    background-color: var(--body-bg);
+}
+
+/* Typography Enhancements */
+h1, h2, h3, .window-title, .logo-icon, .greeting {
+    font-family: 'Cinzel', serif !important;
+    letter-spacing: 0.03em;
+}
+
+.hero-name {
+    background: var(--title-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: var(--hero-name-shadow);
+    margin-bottom: 0.5rem;
+}
+
+.greeting {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--greeting-color);
+    margin-bottom: -10px;
+    opacity: 0.85;
+}
+
+/* Layout Centering */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-subtitle {
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.hero-bio {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-primary);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    background: var(--section-title-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Celestial Elements */
+.blob {
+    filter: blur(90px);
+}
+
+.nav-logo .logo-icon {
+    background: var(--btn-gradient);
+    color: var(--btn-text);
+    box-shadow: var(--logo-shadow);
+    border: none;
+}
+
+/* Project Cards */
+.project-card {
+    border: 1px solid var(--surface-border);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    background: var(--card-gradient);
+    box-shadow: var(--surface-shadow);
+}
+
+.project-card:hover {
+    border-color: var(--card-hover-border);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.project-window-bar {
+    border-bottom: 1px solid var(--surface-border);
+}
+
+.btn-primary {
+    background: var(--btn-gradient);
+    color: var(--btn-text);
+    box-shadow: var(--logo-shadow);
+    border: none;
+}
+.btn-primary:hover {
+    box-shadow: var(--card-hover-shadow);
+    transform: translateY(-2px);
+}
+

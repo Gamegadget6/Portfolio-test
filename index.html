@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liban Ali Syed — Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -87,10 +87,22 @@
                             Liban Ali Syed
                         </h1>
                         <p class="hero-subtitle">Computer Science Student at RCOE&ensp;·&ensp;Software Developer</p>
+                        
+                        <!-- Experiment 7: Responsive Images with <picture> tag -->
+                        <div class="profile-image-wrapper" style="margin: 30px 0;">
+                            <picture>
+                                <!-- Shows a square image on mobile viewports -->
+                                <source srcset="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=500&h=500&fit=crop" media="(max-width: 600px)">
+                                <!-- Shows a massive landscape image on larger screens -->
+                                <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1000&h=400&fit=crop" class="responsive-exp7-img" alt="Astronomy Nebula">
+                            </picture>
+                        </div>
+
                         <p class="hero-bio">
-                            I build thoughtful, high-quality software that solves real problems. My interests span
-                            <strong>Web Development</strong>, <strong>AI &amp; Machine Learning</strong>, and
-                            <strong>Cybersecurity</strong>—with a particular focus on video game and system security.
+                            I craft thoughtful software that makes a difference. I am passionate about <strong>Web Development</strong>, <strong>AI &amp; Machine Learning</strong>, and <strong>Cybersecurity</strong> — specializing in video game & system security.
+                        </p>
+                        <p class="hero-bio" style="margin-top: 15px;">
+                            My academic trajectory is focused on rigorous preparation for advanced studies in both core Computer Science and Data Science. Beyond the software layer, I have a deep curiosity for hardware optimization and system-level customization, frequently exploring the performance limits of computer graphics and computational environments. My technical approach bridges high-level web architecture with low-level hardware prototyping and cloud infrastructure analysis.
                         </p>
                         <div class="hero-actions">
                             <a href="#projects" class="btn btn-primary">
@@ -116,44 +128,63 @@
                     <p class="section-desc">A curated toolkit I use to bring ideas to life.</p>
                 </div>
                 <div class="skills-grid">
-                    <!-- Web Development -->
+                    <!-- Core Languages -->
                     <div class="skill-card">
                         <div class="skill-card-header">
                             <div class="skill-icon">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                             </div>
-                            <h3>Web Development</h3>
-                        </div>
-                        <div class="skill-pills">
-                            <span class="pill">HTML</span>
-                            <span class="pill">CSS</span>
-                            <span class="pill">JavaScript</span>
-                        </div>
-                    </div>
-                    <!-- Languages -->
-                    <div class="skill-card">
-                        <div class="skill-card-header">
-                            <div class="skill-icon">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-                            </div>
-                            <h3>Languages</h3>
+                            <h3>Core Languages</h3>
                         </div>
                         <div class="skill-pills">
                             <span class="pill">C</span>
                             <span class="pill">Python</span>
+                            <span class="pill">JavaScript</span>
+                            <span class="pill">HTML</span>
+                            <span class="pill">CSS</span>
                         </div>
                     </div>
-                    <!-- Tools -->
+                    <!-- Development Tools -->
                     <div class="skill-card">
                         <div class="skill-card-header">
                             <div class="skill-icon">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
                             </div>
-                            <h3>Tools</h3>
+                            <h3>Tools & Management</h3>
                         </div>
                         <div class="skill-pills">
                             <span class="pill">Git</span>
                             <span class="pill">GitHub</span>
+                            <span class="pill">Node.js Env</span>
+                        </div>
+                    </div>
+                    <!-- AI & Machine Learning -->
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+                            </div>
+                            <h3>AI & Machine Learning</h3>
+                        </div>
+                        <div class="skill-pills">
+                            <span class="pill">Deep Learning</span>
+                            <span class="pill">Predictive Modeling</span>
+                            <span class="pill">Data Science</span>
+                        </div>
+                    </div>
+                    <!-- Cloud & Hardware -->
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                            </div>
+                            <h3>Cloud & Hardware</h3>
+                        </div>
+                        <div class="skill-pills">
+                            <span class="pill">AWS / Azure</span>
+                            <span class="pill">Arduino</span>
+                            <span class="pill">Raspberry Pi</span>
+                            <span class="pill">IoT Prototyping</span>
                         </div>
                     </div>
                 </div>
@@ -185,14 +216,14 @@
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                             </div>
                             <h3 class="project-name">MediComply</h3>
-                            <span class="project-type">SaaS Web Application</span>
+                            <span class="project-type">Compliance Auditing Tool</span>
                             <p class="project-desc">
-                                A compliance analysis platform that scans and evaluates websites against medical industry standards, delivering actionable insights for healthcare providers.
+                                A compliance analysis tool designed to audit clinical websites. It actively fetches site structures to identify missing cookie consent banners, privacy policies, third-party trackers, and ADA accessibility issues for HIPAA/GDPR validation.
                             </p>
                             <div class="project-tags">
-                                <span class="tag">SaaS</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Web Scraping</span>
                                 <span class="tag">Compliance</span>
-                                <span class="tag">Healthcare</span>
                             </div>
                             <a href="https://medi-comply.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <span>View Live</span>
@@ -216,17 +247,48 @@
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
                             </div>
                             <h3 class="project-name">Laruki</h3>
-                            <span class="project-type">Cloud Hosting Website</span>
+                            <span class="project-type">Web Design Showcase</span>
                             <p class="project-desc">
-                                A sleek, modern cloud hosting platform concept featuring polished UI design, service breakdowns, and responsive layouts to showcase cloud infrastructure services.
+                                A frontend website showcasing advanced web design capabilities and structured HTML/CSS templates for a fictional suite of cloud-based services.
                             </p>
                             <div class="project-tags">
-                                <span class="tag">Cloud</span>
-                                <span class="tag">Hosting</span>
-                                <span class="tag">UI Design</span>
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">Web Design</span>
                             </div>
                             <a href="https://laruki-cloud-host.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <span>View Live</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Project 3: Autoclicker -->
+                    <div class="project-card">
+                        <div class="project-window-bar">
+                            <div class="window-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="window-title">Autoclicker</span>
+                            <div class="window-spacer"></div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-icon-wrap">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path></svg>
+                            </div>
+                            <h3 class="project-name">Autoclicker</h3>
+                            <span class="project-type">Desktop Automation</span>
+                            <p class="project-desc">
+                                A simple Python script-based autoclicker application featuring an intuitive GUI for automating repetitive clicking tasks efficiently on the desktop.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">GUI</span>
+                                <span class="tag">Automation</span>
+                            </div>
+                            <a href="https://github.com/Gamegadget6/autoclicker" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span>View Details</span>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                             </a>
                         </div>
