@@ -12,6 +12,16 @@
 </head>
 <body>
 
+    <!-- Reusable rune-sigil mark, a personal seal used throughout as a fantasy motif -->
+    <svg style="position:absolute; width:0; height:0; overflow:hidden" aria-hidden="true">
+        <symbol id="rune-sigil" viewBox="0 0 40 40">
+            <line x1="20" y1="2" x2="20" y2="38"/>
+            <line x1="9" y1="13" x2="31" y2="13"/>
+            <circle cx="20" cy="21" r="7"/>
+            <circle cx="20" cy="21" r="1.4" fill="currentColor" stroke="none"/>
+        </symbol>
+    </svg>
+
     <!-- Deep-space background layers: nebula glow + starfield canvas + vignette -->
     <div class="nebula-layer" aria-hidden="true">
         <div class="nebula nebula-1"></div>
@@ -59,30 +69,39 @@
         </div>
     </div>
 
+    <!-- Chart Rail: scroll position index, like an atlas legend -->
+    <nav class="chart-rail" aria-label="Section index">
+        <a href="#about" class="rail-dot" data-rail="about" aria-label="About"></a>
+        <a href="#skills" class="rail-dot" data-rail="skills" aria-label="Skills"></a>
+        <a href="#projects" class="rail-dot" data-rail="projects" aria-label="Projects"></a>
+        <a href="#contact" class="rail-dot" data-rail="contact" aria-label="Contact"></a>
+    </nav>
+
     <main>
         <!-- Hero / About Section -->
         <section class="hero" id="about">
             <div class="container">
+                <div class="hero-open">
+                    <div class="plate-eyebrow standalone">
+                        <span class="eyebrow-mark">✦</span>
+                        <span class="eyebrow-text">Plate I — Field Notes of the Observer</span>
+                        <span class="eyebrow-rule" aria-hidden="true"></span>
+                    </div>
+                    <div class="hero-badge">CS · Class of 2027</div>
+                    <h1 class="hero-name">
+                        <span class="greeting">Hello, I'm</span>
+                        Liban Ali Syed
+                    </h1>
+                    <p class="hero-subtitle">Computer Science Student at RCOE&ensp;·&ensp;Software Developer</p>
+                </div>
+
                 <div class="plate hero-plate">
                     <span class="corner corner-tl" aria-hidden="true"></span>
                     <span class="corner corner-tr" aria-hidden="true"></span>
                     <span class="corner corner-bl" aria-hidden="true"></span>
                     <span class="corner corner-br" aria-hidden="true"></span>
 
-                    <div class="plate-eyebrow">
-                        <span class="eyebrow-mark">✦</span>
-                        <span class="eyebrow-text">Plate I — Field Notes of the Observer</span>
-                        <span class="eyebrow-rule" aria-hidden="true"></span>
-                    </div>
-
                     <div class="hero-content">
-                        <div class="hero-badge">CS · Class of 2027</div>
-                        <h1 class="hero-name">
-                            <span class="greeting">Hello, I'm</span>
-                            Liban Ali Syed
-                        </h1>
-                        <p class="hero-subtitle">Computer Science Student at RCOE&ensp;·&ensp;Software Developer</p>
-
                         <div class="hero-portrait">
                             <div class="portrait-ring ring-inner" aria-hidden="true"></div>
                             <div class="portrait-ring ring-outer" aria-hidden="true"></div>
@@ -112,6 +131,12 @@
                 </div>
             </div>
         </section>
+
+        <div class="rune-divider" aria-hidden="true">
+            <span class="divider-line"></span>
+            <svg class="rune-mark"><use href="#rune-sigil"></use></svg>
+            <span class="divider-line"></span>
+        </div>
 
         <!-- Skills Section -->
         <section class="skills" id="skills">
@@ -184,6 +209,12 @@
                 </div>
             </div>
         </section>
+
+        <div class="rune-divider" aria-hidden="true">
+            <span class="divider-line"></span>
+            <svg class="rune-mark"><use href="#rune-sigil"></use></svg>
+            <span class="divider-line"></span>
+        </div>
 
         <!-- Projects Section -->
         <section class="projects" id="projects">
@@ -290,6 +321,12 @@
             </div>
         </section>
 
+        <div class="rune-divider" aria-hidden="true">
+            <span class="divider-line"></span>
+            <svg class="rune-mark"><use href="#rune-sigil"></use></svg>
+            <span class="divider-line"></span>
+        </div>
+
         <!-- Contact Section -->
         <section class="contact" id="contact">
             <div class="container">
@@ -327,6 +364,12 @@
                 </div>
             </div>
         </section>
+
+        <div class="rune-divider rune-divider-close" aria-hidden="true">
+            <span class="divider-line"></span>
+            <svg class="rune-mark"><use href="#rune-sigil"></use></svg>
+            <span class="divider-line"></span>
+        </div>
     </main>
 
     <!-- Footer -->

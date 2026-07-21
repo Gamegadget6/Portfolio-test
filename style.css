@@ -323,12 +323,27 @@ main, .navbar, .footer, .mobile-menu-overlay {
 /* ---------- Plate component (replaces window-chrome) ---------- */
 .plate {
     position: relative;
-    background: var(--surface);
+    background-color: var(--surface);
     border: 1px solid var(--gold-line-soft);
     border-radius: var(--radius);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 48px 44px;
+    background-image:
+        radial-gradient(ellipse at center, transparent 45%, rgba(5, 6, 15, 0.3) 100%),
+        linear-gradient(var(--gold-line-soft) 1px, transparent 1px),
+        linear-gradient(90deg, var(--gold-line-soft) 1px, transparent 1px);
+    background-size: 100% 100%, 46px 46px, 46px 46px;
+    background-position: center, center, center;
+}
+
+.plate::after {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 1px solid var(--gold-line-soft);
+    opacity: 0.55;
+    pointer-events: none;
 }
 
 .corner {
@@ -343,6 +358,19 @@ main, .navbar, .footer, .mobile-menu-overlay {
 .corner-tr { top: -1px; right: -1px; border-left: none; border-bottom: none; }
 .corner-bl { bottom: -1px; left: -1px; border-right: none; border-top: none; }
 .corner-br { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+.corner::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+.corner-tl::before { top: -2.5px; left: -2.5px; }
+.corner-tr::before { top: -2.5px; right: -2.5px; }
+.corner-bl::before { bottom: -2.5px; left: -2.5px; }
+.corner-br::before { bottom: -2.5px; right: -2.5px; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -391,7 +419,16 @@ main, .navbar, .footer, .mobile-menu-overlay {
 }
 
 /* ---------- Hero ---------- */
-.hero { padding: 64px 0 40px; }
+.hero { padding: 76px 0 40px; }
+
+.hero-open {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.plate-eyebrow.standalone { justify-content: center; }
+.plate-eyebrow.standalone .eyebrow-rule { display: none; }
 
 .hero-plate { max-width: 760px; margin: 0 auto; text-align: center; }
 
@@ -469,6 +506,18 @@ main, .navbar, .footer, .mobile-menu-overlay {
     max-width: 620px;
     color: var(--ink-dim);
     font-size: 0.98rem;
+    text-align: left;
+}
+
+.hero-bio:first-of-type::first-letter {
+    font-family: var(--font-display);
+    font-size: 3.1em;
+    font-weight: 600;
+    line-height: 0.72;
+    float: left;
+    padding: 5px 10px 0 0;
+    color: var(--gold-bright);
+    text-shadow: 0 0 20px rgba(205, 168, 106, 0.4);
 }
 
 .hero-bio-second { margin-top: 15px; }
@@ -544,6 +593,7 @@ main, .navbar, .footer, .mobile-menu-overlay {
     border: 1px solid var(--gold-line);
     color: var(--gold);
     flex-shrink: 0;
+    box-shadow: 0 0 0 4px rgba(205, 168, 106, 0.07), 0 0 0 5px var(--gold-line-soft);
 }
 
 .skill-card-header h3 {
@@ -592,6 +642,19 @@ main, .navbar, .footer, .mobile-menu-overlay {
     transform: translateY(-5px);
     box-shadow: 0 20px 50px rgba(11, 12, 34, 0.45);
 }
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -60%;
+    width: 40%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(205, 168, 106, 0.14), transparent);
+    transform: skewX(-15deg);
+    transition: left 0.75s var(--ease);
+    pointer-events: none;
+    z-index: 1;
+}
+.project-card:hover::before { left: 130%; }
 
 .project-chart {
     padding: 20px 24px 4px;
@@ -735,6 +798,86 @@ main, .navbar, .footer, .mobile-menu-overlay {
     transition: color 0.25s var(--ease);
 }
 .footer-github:hover { color: var(--gold-bright); }
+
+/* ---------- Rune mark & chapter dividers ---------- */
+.rune-mark {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 1.1;
+    opacity: 0.75;
+    filter: drop-shadow(0 0 5px rgba(205, 168, 106, 0.35));
+}
+
+.rune-divider {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    max-width: 360px;
+    margin: 6px auto;
+    padding: 0 20px;
+}
+
+.rune-divider .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-line), transparent);
+}
+
+.rune-divider-close {
+    max-width: 460px;
+    margin: 10px auto 60px;
+}
+.rune-divider-close .rune-mark { width: 30px; height: 30px; opacity: 0.9; }
+
+/* ---------- Chart Rail (scroll index) ---------- */
+.chart-rail {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.chart-rail::before {
+    content: '';
+    position: absolute;
+    top: -4px; bottom: -4px;
+    left: 50%;
+    width: 1px;
+    background: var(--gold-line-soft);
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.rail-dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold-line);
+    background: var(--void-deep);
+    transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.rail-dot:hover { border-color: var(--gold); }
+
+.rail-dot.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(205, 168, 106, 0.6);
+    transform: scale(1.35);
+}
+
+@media (max-width: 1150px) {
+    .chart-rail { display: none; }
+}
 
 /* ---------- Scroll reveal ---------- */
 .reveal {
